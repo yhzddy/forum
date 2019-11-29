@@ -1,17 +1,11 @@
 <template>
   <div class="banner" :style="banStyle">
     <ul class="ban_list" :class="banfontName">
-      <li class="ban_item">
-        <router-link :to="{ name: 'home' }" exact>首页</router-link>
+      <li v-for="(item, index) in taglist" :key="index" class="ban_item">
+        <router-link :to="{ name: item.pathName }" exact>{{
+          item.name
+        }}</router-link>
       </li>
-      <li class="ban_item">
-        <router-link :to="{ name: 'hot' }" exact>沸点</router-link>
-      </li>
-      <li class="ban_item">
-        <router-link :to="{ name: 'topic' }" exact>话题</router-link>
-      </li>
-      <li class="ban_item">小册</li>
-      <li class="ban_item">活动</li>
     </ul>
   </div>
 </template>
@@ -26,6 +20,33 @@ export default {
     banFont: {
       type: String,
       default: "banfont16"
+    },
+    taglist: {
+      type: Array,
+      default: function() {
+        return [
+          {
+            name: "首页",
+            pathName: "home"
+          },
+          {
+            name: "沸点",
+            pathName: "hot"
+          },
+          {
+            name: "话题",
+            pathName: "topic"
+          },
+          {
+            name: "小册",
+            pathName: "topic"
+          },
+          {
+            name: "活动",
+            pathName: "topic"
+          }
+        ];
+      }
     }
   },
   name: "Banner",
