@@ -87,6 +87,7 @@ export default {
 .reg_body {
   .reg_font {
     font-size: 16px;
+    color: #007fff;
   }
   .el-dialog__title {
     font-weight: bold;

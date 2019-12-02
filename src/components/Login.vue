@@ -74,13 +74,6 @@ export default {
       console.log(newVal, oldVal);
       this.dialogFormVisible = this.slg;
     }
-
-    // slg: {
-    //   immediate: true,
-    //   handler: function() {
-    //     this.dialogFormVisible = this.slg;
-    //   }
-    // }
   },
   methods: {
     showreg() {
@@ -95,6 +88,7 @@ export default {
 .reg_body {
   .reg_font {
     font-size: 16px;
+    color: #007fff;
   }
   .el-dialog__title {
     font-weight: bold;

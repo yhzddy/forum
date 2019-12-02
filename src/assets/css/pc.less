@@ -5,17 +5,65 @@
 }
 
 img {
-  width: auto;
+  width: 100%;
   height: auto;
   border-style: none;
 }
 
 a {
   text-decoration: none;
+  color: #909090;
 }
 
 li {
   list-style: none;
+}
+
+.icon {
+  width: 20px;
+}
+.home_banner {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+.homehead {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  box-sizing: border-box;
+}
+.home_banner {
+  background-color: #fff;
+}
+.home_body {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+  margin-top: 130px;
+  display: flex;
+}
+.nav_list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  .nav_list_item {
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    .login:after {
+      content: "·";
+      margin: 0px 4.8px;
+      color: #007fff;
+    }
+
+    .wenzhangziti {
+      color: #007fff;
+      font-size: 16px;
+    }
+  }
 }
 
 .container {
@@ -23,7 +71,6 @@ li {
   margin: 0 auto;
   width: 100%;
   max-width: 960px;
-  background-color: #fff;
   .container_header {
     display: flex;
     align-items: center;
@@ -32,6 +79,18 @@ li {
   }
 }
 
+// .home_body {
+//   display: flex;
+//   align-items: center;
+// }
+
+body {
+  font-size: 12px;
+}
+
+html {
+  background-color: #f4f5f5;
+}
 @media screen and (max-width: 768px) and (min-width: 319px) {
   body {
     background-color: lightblue;
