@@ -30,7 +30,11 @@
                   src="https://b-gold-cdn.xitu.io/v3/static/img/submit-icon.53f4253.svg"
                   class="icon"
                 />
-                <span class="wenzhangziti">写文章</span>
+                <span class="wenzhangziti"
+                  ><router-link :to="{ name: 'drafts' }"
+                    >写文章</router-link
+                  ></span
+                >
               </li>
               <li class="nav_list_item">
                 <Login class="login" :slg="Log" @transreg="showreg"></Login>

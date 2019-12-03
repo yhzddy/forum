@@ -9,6 +9,7 @@
       :visible.sync="dialogFormVisible"
       width="318px"
       class="reg_title"
+      :modal-append-to-body="false"
     >
       <el-form :model="form">
         <el-form-item>
@@ -85,6 +86,10 @@ export default {
 
 <style lang="less" scoped>
 .reg_body {
+  // position: absolute;
+  // .reg_title {
+
+  // }
   .reg_font {
     font-size: 16px;
     color: #007fff;

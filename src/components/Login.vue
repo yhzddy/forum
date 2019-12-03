@@ -9,6 +9,7 @@
       :visible.sync="dialogFormVisible"
       width="318px"
       class="reg_title"
+      :modal-append-to-body="false"
     >
       <el-form :model="form">
         <el-form-item>
