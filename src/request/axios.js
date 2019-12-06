@@ -23,7 +23,9 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   response => {
-    return response;
+    if (response.status === 200) {
+      return response;
+    }
   },
   error => {
     if (error.response) {
