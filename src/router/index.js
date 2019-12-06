@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import store from "../store";
 
 Vue.use(VueRouter);
 
@@ -28,7 +29,8 @@ const routes = [
   {
     path: "/drafts",
     name: "drafts",
-    component: () => import("../views/Drafts.vue")
+    component: () => import("../views/Drafts.vue"),
+    meta: { requireAuth: true } //该字段表示进入该路由是需要登录
   },
   {
     path: "/about",
@@ -45,6 +47,23 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requireAuth) {
+    //判断该路由是否需要登录权限
+    if (store.state.token) {
+      //判断vuex state有没有当前的token
+      next();
+    } else {
+      next({
+        path: "/"
+        // query:{}
+      });
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
